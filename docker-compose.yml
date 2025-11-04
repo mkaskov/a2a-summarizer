@@ -1,0 +1,15 @@
+services:
+  summarizer:
+    build: .
+    container_name: a2a-summarizer
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - PORT=8080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/.well-known/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+

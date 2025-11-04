@@ -1,0 +1,31 @@
+{
+  "id": "urn:uuid:123e4567-e89b-12d3-a456-426614174000",
+  "name": "a2a-summarizer",
+  "description": "Simple extractive text summarizer agent.",
+  "version": "0.1.1",
+  "publisher": {
+    "name": "Example Org",
+    "url": "https://example.org"
+  },
+  "service": {
+    "base_url": "http://localhost:8080",
+    "endpoints": {
+      "summarize": {
+        "path": "/a2a/summarize",
+        "method": "POST",
+        "content_type": "application/json",
+        "description": "POST {text, max_sentences} -> summary"
+      }
+    }
+  },
+  "skills": [
+    {
+      "name": "text_summarization",
+      "description": "Extractive summarization; returns top N sentences."
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  }
+}
+
